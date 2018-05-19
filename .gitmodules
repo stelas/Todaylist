@@ -1,0 +1,6 @@
+[submodule "davical"]
+	path = davical
+	url = https://gitlab.com/davical-project/davical.git
+[submodule "ics-parser"]
+	path = ics-parser
+	url = https://github.com/u01jmg3/ics-parser.git
