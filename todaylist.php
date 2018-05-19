@@ -50,7 +50,7 @@ printline(date('d.m.Y', strtotime($today)));
 foreach ($davevents as $davevent) {
 	$cal = new ICal();
 	$cal->initString($davevent['data']);
-	$calevents = $cal->eventsFromRange("${today}T000000Z", "${today}T235959Z");
+	$calevents = $cal->events();
 	foreach ($calevents as $calevent) {
 		printseparator();
 		printline(date('H:i', strtotime($calevent->dtstart)) . '-' . date('H:i', strtotime($calevent->dtend)) . ' ' . substr(umlauts($calevent->location), 0, LINELENGTH - 12));
