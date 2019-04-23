@@ -39,7 +39,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 }
 
 $today = date('Ymd');
-$dav = new CalDAVClient(CALDAVURL, strip_tags($_SERVER['PHP_AUTH_USER']), strip_tags($_SERVER['PHP_AUTH_PW']));
+$dav = new CalDAVClient(CALDAVURL, filter_var($_SERVER['PHP_AUTH_USER']), filter_var($_SERVER['PHP_AUTH_PW']));
 $davoptions = $dav->DoOptionsRequest();
 if (!isset($davoptions['PROPFIND'])) {
 	exit('CalDAV request failed.');
